@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+sgMail.setApiKey();
 
 const msg = {
     to: 'rexzoneandothers@gmail.com',
