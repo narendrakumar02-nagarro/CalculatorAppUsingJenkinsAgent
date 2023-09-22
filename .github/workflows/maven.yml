@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: NPM Install
-      run: npm install --save @sendgrid/mail
+      run: git clone https://github.com/narendrakumar02/UnusualData.git
       
     - name: SendGrid
       run: chmod +x .github/sendgrid.js
