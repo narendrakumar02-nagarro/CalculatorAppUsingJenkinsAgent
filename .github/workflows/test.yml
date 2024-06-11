@@ -21,6 +21,7 @@ jobs:
       - name: Set the value
         id: step_one
         run: |
+          ls -l
           echo "FOO=$(git describe --tags --abbrev=0)"
       - name: Use the value     
         id: step_two
