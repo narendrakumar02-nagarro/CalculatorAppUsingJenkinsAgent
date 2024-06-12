@@ -37,4 +37,5 @@ jobs:
       - name: Deploy to Azure WebA
         id: step_three
         run: |
+          echo "FOO=$(git branch)" >> $GITHUB_ENV
           echo "${{ env.FOO }}"
