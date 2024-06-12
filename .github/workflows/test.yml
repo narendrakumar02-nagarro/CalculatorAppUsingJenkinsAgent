@@ -33,10 +33,10 @@ jobs:
   deploy-dev:
     needs: build-dev
     runs-on: ubuntu-latest
-    env:
-      Fool: ${{ needs.step_one.outputs.version }}
+    #env:
+     # Fool: ${{ needs.step_one.outputs.version }}
     steps:
       - name: Deploy to Azure WebA
         id: step_three
         run: |
-          echo "$(Fool)"
+          echo "${{ needs.step_one.outputs.version }}"
