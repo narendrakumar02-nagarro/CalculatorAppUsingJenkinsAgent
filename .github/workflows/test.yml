@@ -29,13 +29,19 @@ jobs:
         run: |
           echo "${{ env.FOO }}"
           
-  
-  deploy-dev:
-    needs: build-dev
+  needs: [check-pr]
     runs-on: ubuntu-latest
+    env:
+      PR_NUMBER: ${{ needs.check-pr.outputs.pr-number }}
+
+  deploy-dev:
+    needs: [build-dev]
+    runs-on: ubuntu-latest
+    env:
+      Fool: ${{ needs.build-dev.outputs.FOO }}
     steps:
       - name: Deploy to Azure WebA
         id: step_three
         run: |
           echo "FOO=$(git branch)" >> $GITHUB_ENV
-          echo "${{ env.FOO }}"
+          echo "${{ env.Fool }}"
