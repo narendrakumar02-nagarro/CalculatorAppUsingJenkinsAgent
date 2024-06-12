@@ -39,4 +39,4 @@ jobs:
       - name: Deploy to Azure WebA
         id: step_three
         run: |
-          echo "${{ needs.step_one.outputs.version }}"
+          echo "${{ needs.build-dev.outputs.version }}"
