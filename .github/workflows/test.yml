@@ -35,7 +35,7 @@ jobs:
     needs: [build-dev]
     runs-on: ubuntu-latest
     env:
-      Fool: ${{ needs.build-dev.outputs.FOO }}
+      Fool: ${{ needs.build-dev.outputs.env.FOO }}
     steps:
       - name: Deploy to Azure WebA
         id: step_three
