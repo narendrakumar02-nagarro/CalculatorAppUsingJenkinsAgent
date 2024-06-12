@@ -29,10 +29,7 @@ jobs:
         run: |
           echo "${{ env.FOO }}"
           
-  needs: [check-pr]
-    runs-on: ubuntu-latest
-    env:
-      PR_NUMBER: ${{ needs.check-pr.outputs.pr-number }}
+  
 
   deploy-dev:
     needs: [build-dev]
