@@ -23,7 +23,7 @@ jobs:
         id: step_one
         run: |
           ls -l
-          echo "FOO=$(git branch)" >> $GITHUB_ENV
+          echo "FOO=$(git branch)" >> $GITHUB_OUTPUT
       - name: Use the value     
         id: step_two
         run: |
@@ -35,10 +35,10 @@ jobs:
     needs: [build-dev]
     runs-on: ubuntu-latest
     env:
-      Fool: ${{ needs.build-dev.outputs.env.FOO }}
+      Fool: ${{ steps.step_one.outputs.FOO }}
     steps:
       - name: Deploy to Azure WebA
         id: step_three
         run: |
           echo "FOO=$(git branch)" >> $GITHUB_ENV
-          echo "${{ env.Fool }}"
+          echo "$Fool"
