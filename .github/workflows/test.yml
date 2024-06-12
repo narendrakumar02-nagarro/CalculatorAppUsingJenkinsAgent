@@ -39,4 +39,4 @@ jobs:
       - name: Deploy to Azure WebA
         id: step_three
         run: |
-          echo "$Fool"
+          echo "$(Fool)"
