@@ -25,13 +25,14 @@ jobs:
       - name: Set the value
         id: step_one
         run: |
-          ls -l
-          echo "FOO=${{ github.ref }}" >> $GITHUB_OUTPUT
           echo "${{ env.TESTVAL }}
-      - name: Use the value     
-        id: step_two
-        run: |
-          echo "${{ steps.step_one.outputs.FOO }}"
+      #     ls -l
+      #     echo "FOO=${{ github.ref }}" >> $GITHUB_OUTPUT
+      #     echo "${{ env.TESTVAL }}
+      # - name: Use the value     
+      #   id: step_two
+      #   run: |
+      #     echo "${{ steps.step_one.outputs.FOO }}"
   deploy-dev:
     needs: build-dev
     runs-on: ubuntu-latest
