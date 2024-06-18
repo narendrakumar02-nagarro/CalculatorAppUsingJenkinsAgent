@@ -25,7 +25,7 @@ jobs:
       - name: Set the value
         id: step_one
         run: |
-          echo "${{ env.TESTVAL }}
+          echo "${{ vars.TESTVAL }}
       #     ls -l
       #     echo "FOO=${{ github.ref }}" >> $GITHUB_OUTPUT
       #     echo "${{ env.TESTVAL }}
